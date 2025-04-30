@@ -1,120 +1,105 @@
 package com.bluetoothsimulator
 
-import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.widget.Button
-import android.widget.SeekBar
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.*
+import android.content.pm.PackageManager
 import java.io.IOException
-import java.io.OutputStream
 import java.util.*
+import kotlin.concurrent.thread
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
-    private var bluetoothAdapter: BluetoothAdapter? = null
+    private lateinit var bluetoothAdapter: BluetoothAdapter
     private var bluetoothSocket: BluetoothSocket? = null
-    private var outputStream: OutputStream? = null
-    private var isSending = false
-    private val handler = Handler(Looper.getMainLooper())
-    private var temperature = 20
-
-    private lateinit var temperatureText: TextView
-    private lateinit var simulatedOutput: TextView
-
-    private val sendTemperatureRunnable = object : Runnable {
-        override fun run() {
-            if (isSending) {
-                sendTemperature(temperature)
-                simulatedOutput.text = "Enviado: ${temperature}°C"
-                handler.postDelayed(this, 2000)
-            }
-        }
-    }
+    private var connectedDevice: BluetoothDevice? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-        val deviceName = "Henrique celular"
-        val device: BluetoothDevice? = getBondedDeviceByName(deviceName)
 
-        temperatureText = findViewById(R.id.textViewTemp)
-        simulatedOutput = findViewById(R.id.textViewStatus)
+        val textViewTemp = findViewById<TextView>(R.id.textViewTemp)
+        val textViewStatus = findViewById<TextView>(R.id.textViewStatus)
         val seekBar = findViewById<SeekBar>(R.id.seekBar)
-        val startButton = findViewById<Button>(R.id.buttonStart)
-        val stopButton = findViewById<Button>(R.id.buttonStop)
+        val buttonStart = findViewById<Button>(R.id.buttonStart)
+        val buttonStop = findViewById<Button>(R.id.buttonStop)
+        val editTextMac = findViewById<EditText>(R.id.editTextDeviceAddress)
+        val buttonConnect = findViewById<Button>(R.id.buttonConnect)
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                temperature = 20 + progress
-                temperatureText.text = "Temperatura: ${temperature}°C"
+                textViewTemp.text = "Temperatura: ${progress + 20}°C"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        startButton.setOnClickListener {
-            if (device != null) {
-                connectToDevice(device)
-                isSending = true
-                handler.post(sendTemperatureRunnable)
+        buttonConnect.setOnClickListener {
+            val macAddress = editTextMac.text.toString()
+
+            if (checkSelfPermission(android.Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(arrayOf(android.Manifest.permission.BLUETOOTH_CONNECT), 1)
+                return@setOnClickListener
+            }
+
+            if (BluetoothAdapter.checkBluetoothAddress(macAddress)) {
+                val device = bluetoothAdapter.getRemoteDevice(macAddress)
+                connectToDevice(device, textViewStatus)
             } else {
-                simulatedOutput.text = "Dispositivo não encontrado"
+                Toast.makeText(this, "Endereço MAC inválido", Toast.LENGTH_SHORT).show()
             }
         }
 
-        stopButton.setOnClickListener {
-            isSending = false
-            disconnectFromDevice()
-        }
-    }
-
-    private fun getBondedDeviceByName(deviceName: String): BluetoothDevice? {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                // Permissão não concedida
-                return null
-            }
+        buttonStart.setOnClickListener {
+            sendData("START")
+            textViewStatus.text = "Status: iniciado"
         }
 
-        return bluetoothAdapter?.bondedDevices?.find { it.name == deviceName }
+        buttonStop.setOnClickListener {
+            sendData("STOP")
+            textViewStatus.text = "Status: parado"
+        }
     }
 
     @SuppressLint("MissingPermission")
-    private fun connectToDevice(device: BluetoothDevice) {
-        val uuid = device.uuids?.firstOrNull()?.uuid ?: UUID.fromString("00001101-0000-1000-8000-00805f9b34fb")
-        try {
-            bluetoothSocket = device.createRfcommSocketToServiceRecord(uuid)
-            bluetoothSocket?.connect()
-            outputStream = bluetoothSocket?.outputStream
-        } catch (e: IOException) {
-            simulatedOutput.text = "Erro ao conectar"
+    private fun connectToDevice(device: BluetoothDevice, statusView: TextView) {
+        thread {
+            try {
+                val uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
+                val socket = device.createRfcommSocketToServiceRecord(uuid)
+                bluetoothAdapter.cancelDiscovery()
+                socket.connect()
+                bluetoothSocket = socket
+                connectedDevice = device
+                runOnUiThread {
+                    Toast.makeText(this, "Conectado a ${device.name}", Toast.LENGTH_SHORT).show()
+                    statusView.text = "Status: conectado"
+                }
+            } catch (e: IOException) {
+                runOnUiThread {
+                    Toast.makeText(this, "Erro ao conectar: ${e.message}", Toast.LENGTH_LONG).show()
+                    statusView.text = "Status: erro na conexão"
+                }
+            }
         }
     }
 
-    private fun disconnectFromDevice() {
-        try {
-            outputStream?.close()
-            bluetoothSocket?.close()
-        } catch (_: IOException) {
-        }
-    }
-
-    private fun sendTemperature(temp: Int) {
-        try {
-            outputStream?.write("$temp\n".toByteArray())
-        } catch (_: IOException) {
+    private fun sendData(data: String) {
+        thread {
+            try {
+                bluetoothSocket?.outputStream?.write(data.toByteArray())
+            } catch (e: IOException) {
+                runOnUiThread {
+                    Toast.makeText(this, "Erro ao enviar dados", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }

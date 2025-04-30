@@ -1,0 +1,7 @@
+#Tue Apr 29 10:35:10 GMT 2025
+base.0=/data/data/com.termux/files/home/BluetoothSimulator/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+base.1=/data/data/com.termux/files/home/BluetoothSimulator/app/build/intermediates/global_synthetics_dex/release/classes.dex
+path.0=classes.dex
+path.1=classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

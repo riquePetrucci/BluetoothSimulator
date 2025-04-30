@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="incidents">
+
+    <incident
+        id="ManifestOrder"
+        severity="warning"
+        message="`&lt;uses-permission>` tag appears after `&lt;application>` tag">
+        <location
+            file="${:app*debug*sourceProvider*0*manifest*0}"
+            line="20"
+            column="6"
+            startOffset="724"
+            endLine="20"
+            endColumn="21"
+            endOffset="739"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Temperatura: 20°C&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="12"
+            column="9"
+            startOffset="407"
+            endLine="12"
+            endColumn="41"
+            endOffset="439"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Status: parado&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="25"
+            column="9"
+            startOffset="793"
+            endLine="25"
+            endColumn="38"
+            endOffset="822"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Iniciar&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="33"
+            column="9"
+            startOffset="1046"
+            endLine="33"
+            endColumn="31"
+            endOffset="1068"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Parar&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="40"
+            column="9"
+            startOffset="1259"
+            endLine="40"
+            endColumn="29"
+            endOffset="1279"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="37"
+            column="40"
+            startOffset="1217"
+            endLine="37"
+            endColumn="67"
+            endOffset="1244"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="37"
+            column="41"
+            startOffset="1218"
+            endLine="37"
+            endColumn="50"
+            endOffset="1227"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="66"
+            column="40"
+            startOffset="2514"
+            endLine="66"
+            endColumn="71"
+            endOffset="2545"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="66"
+            column="41"
+            startOffset="2515"
+            endLine="66"
+            endColumn="54"
+            endOffset="2528"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="79"
+            column="41"
+            startOffset="2971"
+            endLine="79"
+            endColumn="67"
+            endOffset="2997"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 23">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="90"
+            column="13"
+            startOffset="3236"
+            endLine="90"
+            endColumn="59"
+            endOffset="3282"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="106"
+            column="37"
+            startOffset="4007"
+            endLine="106"
+            endColumn="53"
+            endOffset="4023"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="129"
+            column="41"
+            startOffset="4762"
+            endLine="129"
+            endColumn="78"
+            endOffset="4799"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/bluetoothsimulator/MainActivity.kt"
+            line="131"
+            column="41"
+            startOffset="4862"
+            endLine="131"
+            endColumn="75"
+            endOffset="4896"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-core-ktx"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-core-ktx = &quot;1.12.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-core-ktx = &quot;1.12.0&quot;&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="154"
+                    endOffset="154"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-core-ktx = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;androidx-core-ktx&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-core-ktx = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;androidx-core-ktx&quot; }&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="220"
+                    endOffset="220"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.core.ktx"
+                robot="true"
+                replacement="libs.androidx.core.ktx">
+                <range
+                    file="${:app*projectDir}/build.gradle.kts"
+                    startOffset="593"
+                    endOffset="624"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="31"
+            column="21"
+            startOffset="594"
+            endLine="31"
+            endColumn="50"
+            endOffset="623"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-appcompat"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-appcompat = &quot;1.6.1&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-appcompat = &quot;1.6.1&quot;&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="154"
+                    endOffset="154"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-appcompat = { module = &quot;androidx.appcompat:appcompat&quot;, version.ref = &quot;androidx-appcompat&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-appcompat = { module = &quot;androidx.appcompat:appcompat&quot;, version.ref = &quot;androidx-appcompat&quot; }&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="220"
+                    endOffset="220"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.appcompat"
+                robot="true"
+                replacement="libs.androidx.appcompat">
+                <range
+                    file="${:app*projectDir}/build.gradle.kts"
+                    startOffset="645"
+                    endOffset="681"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="32"
+            column="21"
+            startOffset="646"
+            endLine="32"
+            endColumn="55"
+            endOffset="680"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for google-material"
+            robot="true">
+            <fix-replace
+                description="Replace with google-material = &quot;1.11.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="google-material = &quot;1.11.0&quot;&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="154"
+                    endOffset="154"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with google-material = { module = &quot;com.google.android.material:material&quot;, version.ref = &quot;google-material&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="google-material = { module = &quot;com.google.android.material:material&quot;, version.ref = &quot;google-material&quot; }&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="220"
+                    endOffset="220"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.google.material"
+                robot="true"
+                replacement="libs.google.material">
+                <range
+                    file="${:app*projectDir}/build.gradle.kts"
+                    startOffset="702"
+                    endOffset="747"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="33"
+            column="21"
+            startOffset="703"
+            endLine="33"
+            endColumn="64"
+            endOffset="746"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-constraintlayout"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-constraintlayout = &quot;2.1.4&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-constraintlayout = &quot;2.1.4&quot;&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="154"
+                    endOffset="154"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-constraintlayout = { module = &quot;androidx.constraintlayout:constraintlayout&quot;, version.ref = &quot;androidx-constraintlayout&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-constraintlayout = { module = &quot;androidx.constraintlayout:constraintlayout&quot;, version.ref = &quot;androidx-constraintlayout&quot; }&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="220"
+                    endOffset="220"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.constraintlayout"
+                robot="true"
+                replacement="libs.androidx.constraintlayout">
+                <range
+                    file="${:app*projectDir}/build.gradle.kts"
+                    startOffset="768"
+                    endOffset="818"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="34"
+            column="21"
+            startOffset="769"
+            endLine="34"
+            endColumn="69"
+            endOffset="817"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-activity-ktx"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-activity-ktx = &quot;1.8.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-activity-ktx = &quot;1.8.2&quot;&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="154"
+                    endOffset="154"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-activity-ktx = { module = &quot;androidx.activity:activity-ktx&quot;, version.ref = &quot;androidx-activity-ktx&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-activity-ktx = { module = &quot;androidx.activity:activity-ktx&quot;, version.ref = &quot;androidx-activity-ktx&quot; }&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="220"
+                    endOffset="220"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.activity.ktx"
+                robot="true"
+                replacement="libs.androidx.activity.ktx">
+                <range
+                    file="${:app*projectDir}/build.gradle.kts"
+                    startOffset="839"
+                    endOffset="877"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="35"
+            column="21"
+            startOffset="840"
+            endLine="35"
+            endColumn="57"
+            endOffset="876"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for junit-junit"
+            robot="true">
+            <fix-replace
+                description="Replace with junit-junit = &quot;4.13.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="junit-junit = &quot;4.13.2&quot;&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="175"
+                    endOffset="175"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with junit-junit = { module = &quot;junit:junit&quot;, version.ref = &quot;junit-junit&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="junit-junit = { module = &quot;junit:junit&quot;, version.ref = &quot;junit-junit&quot; }&#xA;">
+                <range
+                    file="$HOME/BluetoothSimulator/gradle/libs.versions.toml"
+                    startOffset="289"
+                    endOffset="289"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.junit.junit"
+                robot="true"
+                replacement="libs.junit.junit">
+                <range
+                    file="${:app*projectDir}/build.gradle.kts"
+                    startOffset="902"
+                    endOffset="922"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="36"
+            column="25"
+            startOffset="903"
+            endLine="36"
+            endColumn="43"
+            endOffset="921"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="31"
+            column="21"
+            startOffset="594"
+            endLine="31"
+            endColumn="50"
+            endOffset="623"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0">
+        <fix-replace
+            description="Change to 1.7.0"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="32"
+            column="21"
+            startOffset="646"
+            endLine="32"
+            endColumn="55"
+            endOffset="680"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="33"
+            column="21"
+            startOffset="703"
+            endLine="33"
+            endColumn="64"
+            endOffset="746"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="34"
+            column="21"
+            startOffset="769"
+            endLine="34"
+            endColumn="69"
+            endOffset="817"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-ktx than 1.8.2 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.10.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="35"
+            column="21"
+            startOffset="840"
+            endLine="35"
+            endColumn="57"
+            endOffset="876"/>
+    </incident>
+
+    <incident
+        id="IconLauncherShape"
+        severity="warning"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_launcher_round.png"/>
+    </incident>
+
+</incidents>

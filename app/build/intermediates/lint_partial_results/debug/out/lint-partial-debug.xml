@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.bluetoothsimulator.MainActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.mipmap.ic_launcher"
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_launcher.png"/>
+        <entry
+            name="model"
+            string="id[textViewStatus(U),buttonStart(U),buttonStop(U),textViewTemp(U),seekBar(U)],layout[activity_main(U)],mipmap[ic_launcher_round(D),ic_launcher(D)],style[Theme_BluetoothSimulator(D)];;;;"/>
+        <location id="R.style.Theme_BluetoothSimulator"
+            file="${:app*debug*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="2"
+            column="12"
+            startOffset="70"
+            endLine="2"
+            endColumn="43"
+            endOffset="101"/>
+        <location id="R.mipmap.ic_launcher_round"
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_launcher_round.png"/>
+    </map>
+
+</incidents>

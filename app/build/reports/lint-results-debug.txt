@@ -1,0 +1,179 @@
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/AndroidManifest.xml:23: Error: If you need access to FINE location, you must request both ACCESS_FINE_LOCATION and ACCESS_COARSE_LOCATION [CoarseFineLocation]
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "CoarseFineLocation":
+   If your app requires access to FINE location, on Android 12 and higher you
+   must now request both FINE and COARSE. Users will have the option to grant
+   only COARSE location. Ensure your app can work with just COARSE location.
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/AndroidManifest.xml:20: Warning: <uses-permission> tag appears after <application> tag [ManifestOrder]
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+     ~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ManifestOrder":
+   The <application> tag should appear after the elements which declare which
+   version you need, which features you need, which libraries you need, and so
+   on. In the past there have been subtle bugs (such as themes not getting
+   applied correctly) when the <application> tag appears before some of these
+   other elements, so it's best to order your manifest in the logical
+   dependency order.
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:31: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.12.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:32: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0 [GradleDependency]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:33: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+    implementation("com.google.android.material:material:1.11.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:34: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:35: Warning: A newer version of androidx.activity:activity-ktx than 1.8.2 is available: 1.10.1 [GradleDependency]
+    implementation("androidx.activity:activity-ktx:1.8.2")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:90: Warning: Unnecessary; SDK_INT is always >= 23 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/mipmap-hdpi/ic_launcher.png: Warning: The resource R.mipmap.ic_launcher appears to be unused [UnusedResources]
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/mipmap-hdpi/ic_launcher_round.png: Warning: The resource R.mipmap.ic_launcher_round appears to be unused [UnusedResources]
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/values/themes.xml:2: Warning: The resource R.style.Theme_BluetoothSimulator appears to be unused [UnusedResources]
+    <style name="Theme.BluetoothSimulator" parent="@android:style/Theme.Material">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/mipmap-hdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+
+   Explanation for issues of type "IconLauncherShape":
+   According to the Android Design Guide
+   (https://material.io/design/iconography/) your launcher icons should "use a
+   distinct silhouette", a "three-dimensional, front view, with a slight
+   perspective as if viewed from above, so that users perceive some depth."
+
+   The unique silhouette implies that your launcher icon should not be a
+   filled square.
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:31: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.core:core-ktx:1.12.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:32: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:33: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("com.google.android.material:material:1.11.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:34: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:35: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.activity:activity-ktx:1.8.2")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/build.gradle.kts:36: Warning: Use version catalog instead [UseTomlInstead]
+    testImplementation("junit:junit:4.13.2")
+                        ~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseTomlInstead":
+   If your project is using a libs.versions.toml file, you should place all
+   Gradle dependencies in the TOML file. This lint check looks for version
+   declarations outside of the TOML file and suggests moving them (and in the
+   IDE, provides a quickfix to performing the operation automatically).
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:37: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                simulatedOutput.text = "Enviado: ${temperature}°C"
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:37: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                simulatedOutput.text = "Enviado: ${temperature}°C"
+                                        ~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:66: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                temperatureText.text = "Temperatura: ${temperature}°C"
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:66: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                temperatureText.text = "Temperatura: ${temperature}°C"
+                                        ~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:79: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                simulatedOutput.text = "Dispositivo não encontrado"
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:106: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            simulatedOutput.text = "Erro ao conectar"
+                                    ~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:129: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                simulatedOutput.text = "Permissão BLUETOOTH_CONNECT concedida"
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/java/com/bluetoothsimulator/MainActivity.kt:131: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                simulatedOutput.text = "Permissão BLUETOOTH_CONNECT negada"
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/layout/activity_main.xml:12: Warning: Hardcoded string "Temperatura: 20°C", should use @string resource [HardcodedText]
+        android:text="Temperatura: 20°C"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/layout/activity_main.xml:25: Warning: Hardcoded string "Status: parado", should use @string resource [HardcodedText]
+        android:text="Status: parado"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/layout/activity_main.xml:33: Warning: Hardcoded string "Iniciar", should use @string resource [HardcodedText]
+        android:text="Iniciar"
+        ~~~~~~~~~~~~~~~~~~~~~~
+/data/data/com.termux/files/home/BluetoothSimulator/app/src/main/res/layout/activity_main.xml:40: Warning: Hardcoded string "Parar", should use @string resource [HardcodedText]
+        android:text="Parar"
+        ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+1 errors, 29 warnings

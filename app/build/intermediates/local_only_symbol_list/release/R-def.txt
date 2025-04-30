@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+id buttonStart
+id buttonStop
+id seekBar
+id textViewStatus
+id textViewTemp
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+style Theme.BluetoothSimulator

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.bluetoothsimulator.app-merged_res-35:/layout_activity_main.xml.flat",
+        "source": "com.bluetoothsimulator.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.bluetoothsimulator.app-merged_res-35:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.bluetoothsimulator.app-main-36:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.bluetoothsimulator.app-merged_res-35:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.bluetoothsimulator.app-main-36:/mipmap-hdpi/ic_launcher.png"
+    }
+]
