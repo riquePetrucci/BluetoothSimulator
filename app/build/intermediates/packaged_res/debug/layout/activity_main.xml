@@ -1,58 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
-
-    <EditText
-        android:id="@+id/editTextDeviceAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Endereço MAC do Bluetooth"
-        android:inputType="text"
-        android:layout_marginBottom="12dp"/>
-
-    <Button
-        android:id="@+id/buttonConnect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Conectar"
-        android:layout_marginBottom="16dp" />
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/textViewTemp"
+        android:id="@+id/statusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperatura: 20°C"
-        android:textSize="20sp" />
+        android:text="Status"/>
 
+    <TextView
+        android:id="@+id/clientMacText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MAC do cliente"/>
+
+    <Button
+        android:id="@+id/listenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar servidor"/>
+
+    <!-- Mova o SeekBar para baixo do botão -->
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/tempSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="80" />
+        android:max="100"
+        android:progress="50" />
 
     <TextView
-        android:id="@+id/textViewStatus"
+        android:id="@+id/tempValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Status: parado"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/buttonStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Iniciar"
-        android:layout_marginTop="16dp" />
-
-    <Button
-        android:id="@+id/buttonStop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Parar"
-        android:layout_marginTop="8dp" />
+        android:text="Temperatura: 50.0 °C"/>
 
 </LinearLayout>
